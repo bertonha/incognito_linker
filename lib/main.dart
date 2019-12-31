@@ -56,13 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            for (var link in _links) LinkCard(link, _removeLink),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: _links.length,
+        itemBuilder: (context, index) {
+          final link = _links[index];
+          return LinkCard(link, _removeLink);
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _startAddNewTransaction(context),
