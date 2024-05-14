@@ -40,10 +40,8 @@ class _NewLinkState extends State<NewLink> {
               decoration: InputDecoration(labelText: "Title"),
               onSubmitted: (_) => _submitData(),
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Add Link"),
-              color: Theme.of(context).primaryColor,
-              textColor: Theme.of(context).textTheme.button.color,
               onPressed: _submitData,
             )
           ],
